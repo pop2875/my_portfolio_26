@@ -54,12 +54,11 @@
     position: relative;
     overflow: hidden;
   }
-  /* 타일 호버 효과 */
   .tile {
     transition: transform .2s ease, box-shadow .2s ease;
   }
   .tile:hover {
-	filter: brightness(1.08);  
+    filter: brightness(1.08);
     box-shadow: 0 8px 24px rgba(0,0,0,0.35);
     cursor: pointer;
   }
@@ -72,7 +71,6 @@
     justify-content: center;
   }
 
-  /* 타일 스팬 */
   .s-4  { grid-column: span 4; }
   .s-5  { grid-column: span 5; }
   .s-6  { grid-column: span 6; }
@@ -81,7 +79,6 @@
   .s-12 { grid-column: span 12; }
   .tall { grid-row: span 2; }
 
-  /* ---------- 픽셀 모노그램 (시그니처) ---------- */
   .pixel {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -92,7 +89,6 @@
   .pixel i.off { background: transparent; }
   .pixel--lg { width: 130px; }
 
-  /* ---------- 히어로 ---------- */
   .hero h1 {
     font-family: "Archivo", "IBM Plex Sans KR", sans-serif;
     font-weight: 800;
@@ -119,7 +115,6 @@
     letter-spacing: -0.01em;
   }
 
-  /* ---------- 리스트/스킬 ---------- */
   h2.tile-title {
     font-family: "Archivo", "IBM Plex Sans KR", sans-serif;
     font-weight: 800;
@@ -140,19 +135,16 @@
   ul.flat li:last-child { border-bottom: none; }
   ul.flat .tag { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: var(--dim); white-space: nowrap; align-self: center; }
 
-  /* ---------- 프로젝트 ---------- */
   .proj { border-bottom: 1px solid #26241d; padding: 18px 0; }
   .proj:last-child { border-bottom: none; }
   .proj h3 { font-size: 1.05rem; font-weight: 700; }
   .proj p { font-size: 0.9rem; color: #b7b2a4; margin-top: 6px; }
   .proj .stack { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: var(--red); margin-top: 8px; letter-spacing: 0.04em; }
 
-  /* ---------- 배포 로그 ---------- */
   .log { font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; line-height: 2; }
   .log .ok::before { content: "✔ "; }
   .log .cmd { opacity: 0.65; }
 
-  /* ---------- 푸터 ---------- */
   .contact a {
     font-family: "Archivo", sans-serif;
     font-weight: 700;
@@ -164,7 +156,6 @@
   }
   .contact a:hover { color: var(--black); border-color: var(--black); }
 
-  /* 등장 애니메이션 */
   @media (prefers-reduced-motion: no-preference) {
     .tile { animation: rise .5s ease both; }
     .tile:nth-child(2) { animation-delay: .05s; }
@@ -177,7 +168,6 @@
     @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   }
 
-  /* ---------- 반응형 ---------- */
   @media (max-width: 860px) {
     .s-4, .s-5, .s-6, .s-7, .s-8 { grid-column: span 12; }
     .tall { grid-row: auto; }
@@ -228,9 +218,9 @@
      <h2 class="tile-title">Strengths</h2>
      <ul class="flat">
        <li>학습자 리텐션 설계 <span class="tag">병원 13년</span></li>
+       <li>이해관계자 커뮤니케이션 <span class="tag">기관·고객 응대</span></li>
        <li>갈등 중재 · 관계 조율 <span class="tag">상담 운영</span></li>
        <li>운영 체계화 · 매뉴얼 <span class="tag">교육 설계</span></li>
-       <li>팀 동기부여 <span class="tag">중재형</span></li>
        <li>기술 이해도 <span class="tag">부트캠프</span></li>
      </ul>
    </section>
@@ -249,12 +239,13 @@
        <p class="stack">매뉴얼 제작 · 온보딩 · 재무 기록 관리</p>
      </article>
      <article class="proj">
-       <h3>중재형 동기부여자</h3>
-       <p>갈등을 조율하고 팀에 심리적 안정을 주는 역할. 부트캠프에서도 흔들리는 동료들을 붙잡았습니다.</p>
-       <p class="stack">갈등 중재 · 합의 도출 · 팀 안정화</p>
+       <h3>이탈 위기의 동료를 붙잡은 순간 <span style="color:var(--dim); font-weight:400; font-size:0.85rem;">부트캠프</span></h3>
+       <p>포기하려던 팀원과 여러 차례 깊은 대화를 나누며 다시 자리를 잡도록 도왔습니다. 그 동료는 이후 팀의 서버 리드를 맡아 프로젝트를 이끌었습니다. 사람을 붙잡는 일이 곧 교육 운영의 성과로 이어진다는 걸 확인한 경험입니다.</p>
+       <p class="stack">1:1 코칭 · 동기부여 · 팀 안정화</p>
      </article>
-   </section> 
-  <!-- 자격증 -->
+   </section>
+
+  <!-- 프로젝트 -->
   <section class="tile tile--dark s-8 tall" aria-label="프로젝트">
     <h2 class="tile-title">Projects</h2>
     <article class="proj">
@@ -270,12 +261,12 @@
     <article class="proj">
      <h3>3-Tier 보안 실습 랩 구축</h3>
       <p>보안 교육용으로 의도적으로 취약한 웹 환경을 직접 구성했습니다. 학습자가 공격과 방어를 실제로 실습할 수 있는 교보재를 만든 경험입니다.</p>
-	    <p class="stack">NGINX · TOMCAT 10 · MARIADB</p>
+      <p class="stack">NGINX · TOMCAT 10 · MARIADB</p>
     </article>
     <article class="proj">
       <h3>배운 것을 남기는 습관</h3>
       <p>실습마다 마주친 오류와 해결 과정을 기록으로 남겼습니다. 리눅스마스터·네트워크관리사 오답노트처럼, 막힌 지점을 정리해 다음 사람이 덜 헤매도록 하는 데 익숙합니다.</p>
-	    <p class="stack">AWS EC2 · JSP · MARIADB</p>
+      <p class="stack">AWS EC2 · JSP · MARIADB</p>
     </article>
   </section>
 
@@ -298,6 +289,7 @@
       <div class="cmd">이 페이지가 그 증거입니다.</div>
     </div>
   </section>
+
 <!-- 연락처 -->
   <section class="tile tile--red s-12 contact" aria-label="연락처">
     <p class="eyebrow">Contact</p>
@@ -309,5 +301,3 @@
 
 </body>
 </html>
-
-
