@@ -54,6 +54,15 @@
     position: relative;
     overflow: hidden;
   }
+  /* 타일 호버 효과 */
+  .tile {
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .tile:hover {
+	filter: brightness(1.08);  
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    cursor: pointer;
+  }
   .tile--dark { background: var(--black); color: var(--cream); border: 1px solid #1e1c17; }
   .tile--red  { background: var(--red);   color: var(--cream); }
   .tile--grad {
@@ -249,6 +258,11 @@
   <section class="tile tile--dark s-8 tall" aria-label="프로젝트">
     <h2 class="tile-title">Projects</h2>
     <article class="proj">
+      <h3>수업 링크 단축 서비스 구축</h3>
+      <p>매일 바뀌는 긴 줌 수업 링크를 수강생이 외우기 쉬운 짧은 주소로 바꾸는 서비스를, 오픈소스(YOURLS)를 도커로 직접 구축했습니다. 접속 오류를 로그 분석으로 진단해 포트 설정 문제를 찾아 해결했습니다.</p>
+      <p class="stack">DOCKER · DOCKER COMPOSE · MYSQL · APACHE · LINUX</p>
+    </article>
+    <article class="proj">
       <h3>팀 협업 플랫폼 — 백엔드 담당</h3>
       <p>팀 프로젝트에서 로그인·개인 할 일·자료실 파트를 맡았습니다. ERD 설계부터 API 문서화까지, 팀원들이 각자 개발을 이어갈 수 있도록 기준을 잡는 역할을 했습니다.</p>
       <p class="stack">FLASK · MARIADB · NGINX · SOCKET.IO · AWS EC2</p>
@@ -284,11 +298,11 @@
       <div class="cmd">이 페이지가 그 증거입니다.</div>
     </div>
   </section>
-
-  <!-- 연락처 -->
+<!-- 연락처 -->
   <section class="tile tile--red s-12 contact" aria-label="연락처">
     <p class="eyebrow">Contact</p>
-    <a class="en" href="https://github.com/pop2875">github.com/pop2875 →</a>
+    <a class="en" href="mailto:pop2875@naver.com">pop2875@naver.com →</a>
+    <p style="margin-top:12px; font-size:0.9rem; opacity:0.85;">github.com/pop2875</p>
   </section>
 
 </main>
