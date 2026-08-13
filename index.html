@@ -65,6 +65,14 @@
   .tile a, .tile a:hover {
     cursor: pointer;
   }
+  .ghlink {
+    text-decoration: none;
+    transition: color .15s ease, opacity .15s ease;
+  }
+  .ghlink:hover {
+    color: var(--black);
+    opacity: 1;
+  }
   .tile--dark { background: var(--black); color: var(--cream); border: 1px solid #1e1c17; }
   .tile--red  { background: var(--red);   color: var(--cream); }
   .tile--grad {
@@ -304,7 +312,7 @@
   <section class="tile tile--red s-12 contact" aria-label="연락처">
     <p class="eyebrow">Contact</p>
     <a class="en" href="mailto:pop2875@naver.com">pop2875@naver.com →</a>
-    <p style="margin-top:12px; font-size:0.9rem; opacity:0.85;"><a href="https://github.com/pop2875" target="_blank" rel="noopener" style="text-decoration:underline;">github.com/pop2875</a></p>
+    <p style="margin-top:12px; font-size:0.9rem; opacity:0.85;"><a href="https://github.com/pop2875" target="_blank" rel="noopener" class="ghlink">github.com/pop2875</a></p>
   </section>
 
 </main>
