@@ -218,6 +218,17 @@
     .tall { grid-row: auto; }
     .tile { min-height: 140px; }
   }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: var(--red);
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform, opacity;
+  }
 </style>
 </head>
 <body>
@@ -357,6 +368,51 @@
   </section>
 
 </main>
+
+<script>
+(function () {
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!canHover || reduceMotion) return;
+
+  var DOT_COUNT = 8;
+  var dots = [];
+
+  for (var i = 0; i < DOT_COUNT; i++) {
+    var el = document.createElement('div');
+    el.className = 'cursor-dot';
+    var size = 9 - i * 0.7;
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    el.style.opacity = (1 - i / DOT_COUNT) * 0.45;
+    document.body.appendChild(el);
+    dots.push({ el: el, x: window.innerWidth / 2, y: window.innerHeight / 2 });
+  }
+
+  var mouseX = window.innerWidth / 2;
+  var mouseY = window.innerHeight / 2;
+
+  window.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    var targetX = mouseX;
+    var targetY = mouseY;
+    for (var i = 0; i < dots.length; i++) {
+      var d = dots[i];
+      d.x += (targetX - d.x) * 0.28;
+      d.y += (targetY - d.y) * 0.28;
+      d.el.style.transform = 'translate(' + d.x + 'px, ' + d.y + 'px) translate(-50%, -50%)';
+      targetX = d.x;
+      targetY = d.y;
+    }
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+})();
+</script>
 
 </body>
 </html>
