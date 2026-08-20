@@ -107,21 +107,18 @@
 
   .hero h1 {
     font-family: "Archivo", "IBM Plex Sans KR", sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.9rem, 4.4vw, 3.2rem);
-    letter-spacing: -0.02em;
-    line-height: 1.5;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
   }
-  .hero h1 .line1 { display: block; font-weight: 400; color: #5a5850; }
-  .hero h1 .line2 { display: block; color: var(--black); }
-  .hero .accent-rule { width: 32px; height: 2px; background: var(--red); margin: 18px 0 16px; border: none; }
-  .hero .sub { margin-top: 0; font-size: 0.95rem; color: #6b6a62; font-weight: 500; letter-spacing: 0.01em; }
+  .hero .sub { margin-top: 14px; font-size: 1.05rem; color: #3c3a33; font-weight: 500; }
   .eyebrow {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     color: var(--red);
   }
   .tile--dark .eyebrow, .tile--red .eyebrow { color: var(--cream); opacity: 0.75; }
@@ -218,17 +215,6 @@
     .tall { grid-row: auto; }
     .tile { min-height: 140px; }
   }
-
-  .cursor-dot {
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    background: var(--red);
-    pointer-events: none;
-    z-index: 9999;
-    will-change: transform, opacity;
-  }
 </style>
 </head>
 <body>
@@ -237,8 +223,7 @@
  <!-- 히어로: 이름 -->
  <section class="tile hero s-7" aria-label="소개">
    <p class="eyebrow">Education Operations</p>
-   <h1><span class="line1">포기하려는 순간</span><span class="line2">곁에 있는 <span style="color:var(--red)">사람</span></span></h1>
-   <hr class="accent-rule">
+   <h1>포기하려는 순간<br><span style="color:var(--red)">곁에 있는 사람</span></h1>
    <p class="sub">사람이 끝까지 배우게 만드는 운영자</p>
  </section>
 
@@ -328,12 +313,6 @@
       </div>
     </article>
     <article class="proj">
-      <h3>인프라 제약을 우회한 자료 공유 서비스 구축</h3>
-      <p>프린터가 연결된 PC 어디서든 자료를 내려받을 수 있는 개인 자료실이 필요했습니다. 처음엔 WSL에 nginx 서버를 직접 띄우고 공유기 포트포워딩으로 열려 했지만, 기관 네트워크의 AP 격리 정책(기기 간 통신 차단)으로 관리자 권한 없이는 불가능하다는 걸 확인했습니다. 포트포워딩이 필요 없는 정적 호스팅(GitHub Pages + 커스텀 도메인) 구조로 아키텍처를 전환해 문제를 해결했고, 파일 추가부터 배포까지는 셸 스크립트 한 줄로 자동화했습니다.</p>
-      <p class="stack">WSL2 · DOCKER · NGINX · GITHUB PAGES · DNS</p>
-      <p style="margin-top:10px;"><a href="https://github.com/pop2875/print-drop" target="_blank" rel="noopener" style="color:var(--red); font-family:'IBM Plex Mono', monospace; font-size:0.78rem; text-decoration:underline;">github.com/pop2875/print-drop →</a></p>
-    </article>
-    <article class="proj">
      <h3>3-Tier 보안 실습 랩 구축</h3>
       <p>보안 교육용으로 의도적으로 취약한 웹 환경을 직접 구성했습니다. 학습자가 공격과 방어를 실제로 실습할 수 있는 교보재를 만든 경험입니다.</p>
       <p class="stack">NGINX · TOMCAT 10 · MARIADB</p>
@@ -343,7 +322,6 @@
       <h3>배운 것을 남기는 습관</h3>
       <p>실습마다 마주친 오류와 해결 과정을 기록으로 남겼습니다. 리눅스마스터·네트워크관리사 오답노트처럼, 막힌 지점을 정리해 다음 사람이 덜 헤매도록 하는 데 익숙합니다.</p>
       <p class="stack">AWS EC2 · JSP · MARIADB</p>
-      <p style="margin-top:10px;"><a href="https://github.com/pop2875/learning-log" target="_blank" rel="noopener" style="color:var(--red); font-family:'IBM Plex Mono', monospace; font-size:0.78rem; text-decoration:underline;">github.com/pop2875/learning-log →</a></p>
     </article>
   </section>
 
@@ -353,10 +331,6 @@
     <ul class="flat">
       <li>NCP (Naver Cloud) <span class="tag">취득</span></li>
       <li>프로그래밍기능사 <span class="tag">취득</span></li>
-      <li>공인중개사 <span class="tag">취득</span></li>
-      <li>운전면허 1종 <span class="tag">취득</span></li>
-      <li>무인멀티콥터 1종 <span class="tag">취득</span></li>
-      <li>제빵기능사 <span class="tag">취득</span></li>
       <li>리눅스마스터 2급 <span class="tag">1차 합격</span></li>
       <li>네트워크관리사 2급 <span class="tag">1차 합격</span></li>
     </ul>
@@ -379,51 +353,6 @@
   </section>
 
 </main>
-
-<script>
-(function () {
-  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!canHover || reduceMotion) return;
-
-  var DOT_COUNT = 8;
-  var dots = [];
-
-  for (var i = 0; i < DOT_COUNT; i++) {
-    var el = document.createElement('div');
-    el.className = 'cursor-dot';
-    var size = 16 - i * 1.1;
-    el.style.width = size + 'px';
-    el.style.height = size + 'px';
-    el.style.opacity = (1 - i / DOT_COUNT) * 0.45;
-    document.body.appendChild(el);
-    dots.push({ el: el, x: window.innerWidth / 2, y: window.innerHeight / 2 });
-  }
-
-  var mouseX = window.innerWidth / 2;
-  var mouseY = window.innerHeight / 2;
-
-  window.addEventListener('mousemove', function (e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animate() {
-    var targetX = mouseX;
-    var targetY = mouseY;
-    for (var i = 0; i < dots.length; i++) {
-      var d = dots[i];
-      d.x += (targetX - d.x) * 0.28;
-      d.y += (targetY - d.y) * 0.28;
-      d.el.style.transform = 'translate(' + d.x + 'px, ' + d.y + 'px) translate(-50%, -50%)';
-      targetX = d.x;
-      targetY = d.y;
-    }
-    requestAnimationFrame(animate);
-  }
-  requestAnimationFrame(animate);
-})();
-</script>
 
 </body>
 </html>
